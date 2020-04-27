@@ -11,8 +11,8 @@ body{
 .container{
     width:80%;
     margin:auto;
-
 }
+
 ul{
     margin: 0;
     padding: 0;
@@ -164,33 +164,56 @@ h2{
 
 /* Serviços */
 
+#serv {
+    overflow: hidden;
+}
+
 #page_s {
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: cornflowerblue;
+    background-image: url("../img/flash.png");
+    background-position: center;
 }
+
 #container_s {
-    margin-top: 170px;
-    margin-left: 80px;
+    margin: auto;
+    padding: auto;
+    margin-left: 10%;
+    margin-top: 35%;
+    text-align: center;
+    width: 550px;
+    height: 520px;
+    border: 5px dotted #ffbf00;
+    border-bottom: none;
+    border-radius: 100px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: #f4f4f4;
+    overflow: hidden;
 }
+
 h1#titulo {
-    margin-left: 60px;
     font-size: 34px;
     margin-top: 40px;
-    color: #2f2929;
+    color: black;
 }
+
 #container_simulador {
     overflow: hidden;
-    margin-top: 40px;
-    background-color: #fff;
+    margin: auto;
+    margin-right: 20%;
+    background-color: #f4f4f4;
+    margin-top: 150px;
     border-radius: 0 0 5px 5px;
-    box-shadow: 2px 2px 40px 0 #9B625A;
-    margin-left: 20px;
-    padding: 41px;
+    border: 5px dashed #ffbf00;
+    padding: 40px;
     width: 420px;
     height: 500px;
     text-align: center;
 }
+
 #plano_recomendado {
     font-size: 24px;
     text-align: center;
@@ -199,8 +222,9 @@ h1#titulo {
     color: #2f2929;
     text-transform: uppercase;
 }
+
 #titulo_mens {
-    color: #9B625A;
+    color: #ffbf00;
     font-size: 14px;
     font-weight: 700px;
     letter-spacing: 1.4px;
@@ -213,9 +237,9 @@ h1#titulo {
 }
 #valor::before {
     color: #30455c;
-    top: -20px;
     content: "R$";
     font-size: 16px;
+    margin-right: 5px;
 }
 #botao-primario {
     border: none;
@@ -224,8 +248,7 @@ h1#titulo {
     height: 40px;
     text-align: center;
     text-transform: uppercase;
-    color: #002868;
-    background-color: black;
+    background-color: #ffbf00;
     color: white;
     font-weight: 700;
     transition: 0.4s;
@@ -233,16 +256,15 @@ h1#titulo {
 }
 #botao-primario:hover {
     background: none;
-    border: 1px solid black;
-    color: white;  
-    color: black;
+    border: 1px solid #ffbf00;
+    color: #ffbf00;  
     transition: 0.4s;
 }
 #botao-primario::after {
     position: absolute;
     content: "";
     margin-left: -160px;
-    top: 400px;
+    top: 650px;
     width: 400px;
     display: block;
     background: black;
@@ -253,9 +275,8 @@ h1#titulo {
     font-size: 18px;
 }
 #text-embaixo-botao::before {
-    left: 810px;
-    position: absolute;
     content: "X";
+    margin-right: 5px;
     color: red;
     font-size: 18px;
 }
@@ -264,21 +285,19 @@ h1#titulo {
 }
 #text-embaixo-texto::before {
     content: "✔";
-    position: absolute;
-    left: 810px;
-    top: 486px;
+    margin-right: 5px;
+    color: green;
 }
 #texto_embaixo_titulo {
     margin-top: 10px;
-    margin-left: 70px;
     font-size: 19px;
     color: #30455c;
 }
 #numero_trafos {
-    width: 350px;
+    width: 50%;
     color: #30455c;
     font-size: 14px;
-    margin-left: 70px;
+    text-align: center;
     padding: 2px;
 }
 #numero_trafos:focus {
@@ -287,7 +306,6 @@ h1#titulo {
 #botao_calcular {
     text-transform: uppercase;
     font-size: 14px;
-    margin-left: 170px;
     cursor: pointer;
     border: none;
     background: black;
@@ -295,8 +313,15 @@ h1#titulo {
     border-radius: 4px;
     padding: 10px 30px;
 }
+
+#botao_calcular:hover {
+    background-color: #ffffff;
+    color: black;
+    border: 1px solid black;
+    transition: 0.4s;
+}
+
 #texto_embaixo_botao_calcular {
-    margin-left: 70px;
     font-size: 21px;
     color: #30455c;
 }
