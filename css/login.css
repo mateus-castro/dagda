@@ -1,0 +1,71 @@
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+.all{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+}
+
+.login{
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Open Sans';
+}
+
+.login a{
+    text-decoration: none;
+    color: blue;
+    font-weight: bold;
+}
+
+.login a:hover{
+    color: blueviolet;
+}
+
+.login a:active{
+    color: red;
+}
+
+.textS{
+    font-size: 30px;
+    font-family: fantasy;
+    color: #303030;
+}
+
+.login .text{
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.login .box{
+    border: transparent;
+    outline: none;
+    height: 20px;
+    border-radius: 5px;
+    border-bottom: #ffbf00 3px solid;
+    text-align: center;
+    width: 300px;
+    font-family: Georgia, 'Times New Roman';
+}
+
+.botao{
+    background-color: #ffbf00;
+    border-radius: 7px;
+    outline: none;
+    padding: 8px 15px;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.botao:hover{
+    background-color: #232323;
+}
+
+.botao:active{
+    background-color: #424242;
+}

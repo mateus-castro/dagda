@@ -1,0 +1,163 @@
+/*Corpo*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background: #ffffff;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    padding-top: 30px;
+    min-height: 70px;
+    background-color: white ;
+}
+.header a{
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.header li{
+   
+    display: inline;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.header .title-header{
+    float: left;
+}
+
+.header .title-header h1{
+    margin: 0;
+}
+
+.nav{
+    float: right;
+    margin-top: 10px;
+}
+
+.header .highlight, .header .current a{
+    color: #ffbf00;
+    font-weight: bold;
+    text-shadow: 2px 2px 1px black;
+}
+/*Fim Corpo*/
+
+
+/*Index*/
+
+.desc{
+    min-height: 482px;
+    background: url('../img/trafo2.jpg' ) no-repeat;
+    background-size: 100%;
+}
+
+.somos{
+    margin-top: 3%;
+}
+
+.somos .caixa1{
+    width: 460px;
+    height: 300px;
+    border: #000000 2px solid;
+    float: left;
+    border-radius: 10px;
+}
+.somos .caixa2{
+    width: 500px;
+    height: 300px;
+    border-bottom: #ffbf00 5px solid;
+    float: left;
+    background: url('../img/trafo.png') no-repeat;
+    background-size: 100%;
+    margin-left: 10%;
+}
+
+h2{
+    text-align: center;
+
+}
+
+.somos .txt1{
+    text-align: justify;
+    margin: 10px;
+}
+
+.box{
+    margin-top: 30%;
+}
+
+.box .item1{
+    float: left;
+    width: 30%;
+    text-align: center;
+    padding: 17px;
+    
+}
+
+.box .item1 img{
+    width: 120px;
+}
+.footer {
+    margin-top: 50%;
+    bottom: 0;
+    width:100%;
+    background:#ffbf00;
+    text-align: center;
+}
+/*Fim Index*/
+
+
+/*Login*/
+
+#login_box{
+    background-image: url('../img/fundo.webp');
+    background-color: white;
+    position: fixed;
+    top: 0; 
+    bottom: 0; 
+    left: 0; 
+    right:0;
+    margin: auto;
+    width: 400px;
+    height: 355px;
+    border: 1px solid black;
+    border-radius: 20px;
+    display: none;
+}
+
+#iframe_box{
+    height: 100%;
+    width: 100%;
+}
+
+.x{
+    position: absolute;
+	top: 0;
+	right:0;
+	width: 40px;
+	height: 40px;
+}
+
+.x:hover{
+    filter: brightness(90%);
+}
+
+.x:active{
+    filter: brightness(500%);
+}
