@@ -44,12 +44,17 @@ body {
 .login .box{
     border: transparent;
     outline: none;
-    height: 20px;
+    height: 25px;
     border-radius: 5px;
     border-bottom: #ffbf00 3px solid;
+    font-size: 18px;
     text-align: center;
     width: 300px;
     font-family: Georgia, 'Times New Roman';
+}
+
+.box:focus {
+    background-color: #f4f4f4;
 }
 
 .botao{
