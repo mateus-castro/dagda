@@ -158,7 +158,8 @@ h2{
 	top: 0;
 	right:0;
 	width: 40px;
-	height: 40px;
+    height: 40px;
+    cursor: pointer;
 }
 
 .x:hover{
