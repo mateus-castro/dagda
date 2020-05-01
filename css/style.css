@@ -5,7 +5,6 @@ body{
     line-height: 1.5;
     padding: 0;
     margin: 0;
-    background: #ffffff;
 }
 
 .container{
@@ -121,11 +120,12 @@ h2{
     width: 120px;
 }
 .footer {
-    margin-top: 50%;
     bottom: 0;
     width:100%;
-    background:#ffbf00;
+    background:black;
+    color: white;
     text-align: center;
+    float: left;
 }
 /*Fim Index*/
 
@@ -171,10 +171,6 @@ h2{
 }
 
 /* Serviços */
-
-#serv {
-    overflow: hidden;
-}
 
 #page_s {
     display: grid;
@@ -336,4 +332,130 @@ h1#titulo {
 #descricao_valor {
     color: #30455c;
     font-size: 21px;
+}
+
+/* Painel */
+
+.gf1 {
+    margin: auto;
+    margin-right: 5px;
+    padding: 25px;
+    background-color: gray;
+    height: 80%;
+    width: 45%;
+}
+
+.gf2 {
+    margin: auto;
+    padding: 25px;
+    background-color: #E0FFFF;
+    color: gray;
+    height: 80%;
+    width: 45%;
+}
+
+.back {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: auto;
+    width: 100%;
+    height: 835px;
+    background: gray;
+    background-image: linear-gradient(#ffbf00, black);
+    text-align: center;
+    color: white;
+    font-size: 35px;
+}
+
+#grafico-box {
+    margin: auto;
+    margin-top: 10%;
+    width: 100%;
+}
+
+#iframe-graf {
+    height: 550px;
+    width: 100%;
+}
+
+/* Prim Pagina */
+
+#prim-pag{
+    overflow: hidden;
+}
+
+canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#link-map {
+    color: gray;
+}
+
+#link-map a {
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#link-map a:hover {
+    color: blueviolet;
+}
+
+#link-map a:active {
+    color: red;
+}
+
+#link-voltar {
+    float: right;
+    font-size: 20px;
+}
+
+/* Chart.js */
+
+@keyframes chartjs-render-animation {
+    from {
+        opacity: .99
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.chartjs-render-monitor {
+    animation: chartjs-render-animation 1ms
+}
+
+.chartjs-size-monitor,
+.chartjs-size-monitor-expand,
+.chartjs-size-monitor-shrink {
+    position: absolute;
+    direction: ltr;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: -1
+}
+
+.chartjs-size-monitor-expand>div {
+    position: absolute;
+    width: 1000000px;
+    height: 1000000px;
+    left: 0;
+    top: 0
+}
+
+.chartjs-size-monitor-shrink>div {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    left: 0;
+    top: 0
 }
