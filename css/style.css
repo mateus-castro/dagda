@@ -340,7 +340,7 @@ h1#titulo {
     margin: auto;
     margin-right: 5px;
     padding: 25px;
-    background-color: gray;
+    background-color: #E0FFFF;
     height: 80%;
     width: 45%;
 }
@@ -349,7 +349,6 @@ h1#titulo {
     margin: auto;
     padding: 25px;
     background-color: #E0FFFF;
-    color: gray;
     height: 80%;
     width: 45%;
 }
@@ -363,7 +362,7 @@ h1#titulo {
     background: gray;
     background-image: linear-gradient(#ffbf00, black);
     text-align: center;
-    color: white;
+    color: gray;
     font-size: 35px;
 }
 
