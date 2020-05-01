@@ -61,32 +61,32 @@
 		options: {
 			responsive: true,
 			title: {
-            display: true,
-            text: 'Estado dos Trafos'
-		}
+				display: true,
+				text: 'Estado dos Trafos'
+			}
 		}
 	};
 
-function receberNovasLeituras() {
-setTimeout(() => {
+	function receberNovasLeituras() {
+		setTimeout(() => {
 
-    // esse "novoRegistro" será recuperado do backend futuramente
-    var novoRegistro = {
-        data: randomScalingFactor()
-    };
+			// esse "novoRegistro" será recuperado do backend futuramente
+			var novoRegistro = {
+				data: randomScalingFactor()
+			};
 
-    // tirando e colocando valores no gráfico
-    config.data.datasets[0].data.shift();  // apagar o primeiro
-    config.data.datasets[0].data.push(novoRegistro.data); // incluir uma nova leitura
+			// tirando e colocando valores no gráfico
+			config.data.datasets[0].data.shift();  // apagar o primeiro
+			config.data.datasets[0].data.push(novoRegistro.data); // incluir uma nova leitura
 
-    // Atualiza o gráfico
-    window.myPie.update();
+			// Atualiza o gráfico
+			window.myPie.update();
 
-    // agendar a chamada da mesma função para daqui a 5 segundos
-    receberNovasLeituras();
+			// agendar a chamada da mesma função para daqui a 5 segundos
+			receberNovasLeituras();
 
-}, 5000); // 5000 ms -> 5 segundos
-}
+		}, 5000); // 5000 ms -> 5 segundos
+	}
 
 	window.onload = function () {
 		var ctx = document.getElementById('chart-area').getContext('2d');
