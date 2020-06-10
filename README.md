@@ -1,2 +1,3 @@
-# dagda
-grupo 9 incrível
+Grupo PI - 09 BandTec
+
+Dagda - Projeto de monitoramento de transformadores
