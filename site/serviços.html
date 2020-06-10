@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <title>DAGDA</title>
+</head>
+
+<body id="serv">
+    <div id="login_box">
+        <img src="img/x.png" class="x" onclick="fechar()">
+        <iframe name="iframeb" id="iframe_box" src="login.html" frameborder="0"></iframe>
+    </div>
+    <div class="header">
+        <div class="container">
+            <div class="title-header">
+                <h1> <span class="highlight">DAGDA</span> Solutions</h1>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li class="current"><a href="serviços.html">Serviços</a></li>
+                    <li><a href="painel.html">Painel</a></li>
+                    <li><a href="login.html" onclick="enter()" target="iframeb"> Login </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="page_s">
+        <div id="container_s">
+            <h1 id="titulo">Encontre o plano ideal</h1>
+            <br>
+            <a id="texto_embaixo_titulo"> 1 - Quantos trafos você deseja monitorar? </a>
+            <br> <br>
+            <input autofocus id="numero_trafos" type="text">
+            <br> <br>
+            <button onclick="calcular_custo()" id="botao_calcular"> Calcular </button>
+            <br> <br>
+            <a id="texto_embaixo_botao_calcular"> Monitoramento em tempo real </a>
+        </div>
+        <div id="container_simulador">
+            <a id="plano_recomendado">Plano Inicial</a>
+            <br> <br> <br>
+            <a id="titulo_mens">Preços a partir de</a>
+            <br> <br> <br>
+            <a id="valor">116.66</a>
+            <br> <br> <br>
+            <button id="botao-primario">Contratar</button>
+            <br> <br> <br> <br>
+            <a id="text-embaixo-botao">Manutenção não está incluso</a>
+            <br>
+            <a id="text-embaixo-texto">Sensor incluso</a>
+            <br> <br> <br>
+            <a id="descricao_valor">Valor mensal</a>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="container">
+            Feito por Grupo 9 - CCO &#x2B50
+        </div>
+    </div>
+</body>
+
+</html>
