@@ -16,6 +16,9 @@
 
 		.texto_media {
 			font-size: 15px;
+			float: left;
+			padding: 0px;
+			margin: 0px;
 			color: grey;
 		}
 	</style>
@@ -25,7 +28,9 @@
 	<div class="temp" id="graf-pg">
 		<section>
 			<h2 class="texto_media">Média: <label id='average'>0.00</label></h2>
+			<br>
 			<h2 class="texto_media">Média Hora: <label id='averageHour'>0.00</label></h2>
+			<br>
 		</section>
 		<div style="width:100%">
 			<canvas id="chart"></canvas>
@@ -49,10 +54,6 @@
 			<canvas id="chart-switch"></canvas>
 		<section>
 	</div> -->
-	<br>
-	<br>
-	<br>
-	<br>
 	<div class="mapa">
 		<h2 id="link-map"> Veja <a href="#box-Mapa"> aqui </a> a localização exata de seus transformadores</h3>
 
@@ -109,8 +110,8 @@
 	</div>
 	<script>
 		var context = document.getElementById("chart").getContext("2d");
-		context.canvas.width = 1000;
-		context.canvas.height = 300;
+		context.canvas.width = 1200;
+		context.canvas.height = 600;
 
 		var configuration = {
 			type: 'line',
