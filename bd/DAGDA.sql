@@ -1,5 +1,5 @@
-create database dagda1;
-use dagda1;
+create database dagda;
+use dagda;
 
 create table monitores (
 	idMonitor int primary key auto_increment,
@@ -11,21 +11,30 @@ create table monitores (
     senha varchar(30)
 );
 
-create table responsaveisTecnicos (
-	idResponsavel int primary key auto_increment,
-    cpf char(11),
-    nomeUsuario varchar(40),
-    telFixo char(9),
-    telCel char(11)
-);
-
 create table chama (
 	fkMonitor int,
 	fkResponsavel int,
     primary key(fkMonitor, fkResponsavel),
 	dataOcorrencia date,
     foreign key(fkMonitor) references monitores(idMonitor),
-    foreign key(fkResponsavel) references responsaveisTecnicos(idResponsavel)
+    foreign key(fkResponsavel) references responsaveisTecnico(idResponsavel)
+);
+
+create table responsaveisTecnicos (
+	idResponsavel int auto_increment,
+    cpf char(11),
+    nomeUsuario varchar(40),
+    telFixo char(9),
+    telCel char(11)
+);
+
+create table arruma (
+	fkResponsavel int,
+	fkTrafo int,
+    primary key(fkTrafo, fkResponsavel),
+    dataOcorrencia date,
+    foreign key(fkResponsavel) references responsaveisTecnico(idResponsavel),
+    foreign key(fkTrafo) references transformadores(idTrafo)
 );
 
 create table transformadores (
@@ -35,17 +44,9 @@ create table transformadores (
     cidade varchar(30) not null,
     bairro varchar(30) not null,
     rua varchar(30),
-    foreign key(fkMonitor) references monitores(idMonitor)
+    foreign key(fkUsuario) references usuarios(idUsuario)
 );
 
-create table arruma (
-	fkResponsavel int,
-	fkTrafo int,
-    primary key(fkTrafo, fkResponsavel),
-    dataOcorrencia date,
-    foreign key(fkResponsavel) references responsaveisTecnicos(idResponsavel),
-    foreign key(fkTrafo) references transformadores(idTrafo)
-);
 
 create table leitura (
 	idLeitura int auto_increment,
