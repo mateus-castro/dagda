@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <title> DAGDA </title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="title-header">
+                <h1> <span class="highlight">💡 DAGDA</span> Solutions</h1>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="serviços.html">Serviços</a></li>
+                    <li><a href="login.html" onclick="enter()" target="iframeb"> Login </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="box box-txt">
+            <h2>Perguntas Frequentes</h2>
+            <p>Dificuldades no uso de algum produto DAGDA? Verifique aqui se seu problema está listado: <br>
+            </p>
+            <div>
+                <button class="button_faq" onclick="mostrar(1)"><b>PROBLEMAS COM SUA CONTA?</b></button>
+            </div>
+            <div class="text-faq" id="abrir1">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi harum laboriosam odit minima
+                voluptate eligendi corporis quisquam animi laborum mollitia perferendis debitis amet, eaque et corrupti,
+                quos, itaque consequatur tempora. <br> <b style="color: red; font-size: 30px;" onclick="fechar(1)">x</b>
+            </div>
+            <div>
+                <button class="button_faq" onclick="mostrar(2)"><b>PROBLEMAS COM OS TRANSFORMADORES?</b></button>
+            </div>
+            <div class="text-faq" id="abrir2">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi harum laboriosam odit minima
+                voluptate eligendi corporis quisquam animi laborum mollitia perferendis debitis amet, eaque et corrupti,
+                quos, itaque consequatur tempora. <br> <b style="color: red; font-size: 30px;" onclick="fechar(2)">x</b>
+            </div>
+            <div>
+                <button class="button_faq" onclick="mostrar(3)"><b>PROBLEMAS COM O SISTEMA?</b></button>
+            </div>
+            <div class="text-faq" id="abrir3">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi harum laboriosam odit minima
+                voluptate eligendi corporis quisquam animi laborum mollitia perferendis debitis amet, eaque et corrupti,
+                quos, itaque consequatur tempora. <br> <b style="color: red; font-size: 30px;" onclick="fechar(3)">x</b>
+            </div>
+            <div>
+                <button class="button_faq" onclick="mostrar(4)"><b>SEGURANÇA</b></button>
+            </div>
+            <div class="text-faq" id="abrir4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi harum laboriosam odit minima
+                voluptate eligendi corporis quisquam animi laborum mollitia perferendis debitis amet, eaque et corrupti,
+                quos, itaque consequatur tempora. <br> <b style="color: red; font-size: 30px;" onclick="fechar(4)">x</b>
+            </div>
+            <div>
+                <button class="button_faq" onclick="mostrar(5)"><b>PLANOS</b></button>
+            </div>
+            <div class="text-faq" id="abrir5">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi harum laboriosam odit minima
+                voluptate eligendi corporis quisquam animi laborum mollitia perferendis debitis amet, eaque et corrupti,
+                quos, itaque consequatur tempora. <br> <b style="color: red; font-size: 30px;" onclick="fechar(5)">x</b>
+            </div>
+            <div>
+                <button class="button_faq" onclick="mostrar(6)"><b>PERGUNTA 6</b></button>
+            </div>
+            <div class="text-faq" id="abrir6">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi harum laboriosam odit minima
+                voluptate eligendi corporis quisquam animi laborum mollitia perferendis debitis amet, eaque et corrupti,
+                quos, itaque consequatur tempora. <br> <b style="color: red; font-size: 30px;" onclick="fechar(6)">x</b>
+            </div>
+            <br>
+            <h2>Entre em contato</h2>
+            <p>Se não achar o seu problema ou não conseguiu resolver, entre em contato com o suporte DAGDA<br> </p>
+            <form action="" class="formulario">
+                <label for="Nome">Nome:</label> <br> <textarea type="text" id="Nome"></textarea> <br>
+                <label for="Email">Email:</label> <br> <textarea type="email" id="Email"></textarea> <br>
+                <label for="Assunto">Assunto:</label> <br> <textarea type="text" id="Assunto"></textarea><br>
+                <label for="Mensagem">Escreva sua dúvida!</label> <br> <textarea id="txtArea" rows="10" cols="70"
+                    class="mensagem"></textarea>
+                Ou envie um email diretamente para <b>201grupo9c@bandtec.com.br</b> .
+        </div>
+    </div>
+    <div id="resultado"></div>
+
+    <div class="footer">
+        <div class="container">
+            <a href="faq.html">FAQ </a> | <a href="sobre.html"> SOBRE</a><br>
+            DAGDA - 2020 © | Contato : 201grupo9c@bandtec.com.br
+        </div>
+    </div>
+</body>
+<script>
+    function mostrar(valor) {
+        if (valor == 1) {
+            abrir1.style.display = 'block';
+        } else if (valor == 2) {
+            abrir2.style.display = 'block';
+        } else if (valor == 3) {
+            abrir3.style.display = 'block';
+        } else if (valor == 4) {
+            abrir4.style.display = 'block';
+        } else if (valor == 5) {
+            abrir5.style.display = 'block';
+        } else if (valor == 6) {
+            abrir6.style.display = 'block';
+        }
+    }
+
+    function fechar(valor) {
+        if (valor == 1) {
+            abrir1.style.display = 'none';
+        } else if (valor == 2) {
+            abrir2.style.display = 'none';
+        } else if (valor == 3) {
+            abrir3.style.display = 'none';
+        } else if (valor == 4) {
+            abrir4.style.display = 'none';
+        } else if (valor == 5) {
+            abrir5.style.display = 'none';
+        } else if (valor == 6) {
+            abrir6.style.display = 'none';
+        }
+    }
+
+    function initFreshChat() {
+        window.fcWidget.init({
+            token: "511aa7e9-4722-49d1-a712-c66b5bac89e9",
+            host: "https://wchat.freshchat.com"
+        });
+    }
+    function initialize(i, t) { var e; i.getElementById(t) ? initFreshChat() : ((e = i.createElement("script")).id = t, e.async = !0, e.src = "https://wchat.freshchat.com/js/widget.js", e.onload = initFreshChat, i.head.appendChild(e)) } function initiateCall() { initialize(document, "freshchat-js-sdk") } window.addEventListener ? window.addEventListener("load", initiateCall, !1) : window.attachEvent("load", initiateCall, !1);
+    // Copy the below lines under window.fcWidget.init inside initFreshChat function in the above snippet
+
+    // To set unique user id in your system when it is available
+    window.fcWidget.setExternalId("ENEL.1010");
+
+    // To set user name
+    window.fcWidget.user.setFirstName("ENEL");
+
+    // To set user email
+    window.fcWidget.user.setEmail("john.doe@gmail.com");
+
+    // To set user properties
+    window.fcWidget.user.setProperties({
+        plan: "Estate",                 // meta property 1
+        status: "Active"                // meta property 2
+    });
+</script>
+
+</html>

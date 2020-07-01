@@ -1,0 +1,177 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background: url(https://professor-falken.com/wp-content/uploads/2017/11/Como-cambiar-la-imagen-de-fondo-del-inicio-de-sesion-en-tu-Mac-professor-falken.com_.jpg) no-repeat;
+    background-size: cover;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    padding-top: 30px;
+    min-height: 70px;
+    background-color: whitesmoke;
+    border-bottom: black 2px solid;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.header a{
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-family: fantasy;
+    border-bottom: #ffbf55 2px solid;
+    border-top: #ffbf55 2px solid;
+    padding: 5px;
+}
+
+.header li{
+    display: inline;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.header .title-header{
+    float: left;
+}
+
+.header .title-header h1{
+    margin: 0;
+    width: 300px;
+
+}
+
+.nav{
+    float: right;
+    margin-top: 10px;
+}
+
+
+.nav ul li a:hover {
+    background-color: black;
+    padding: 7px;
+    font-weight: bold;
+    border-radius: 15px;
+    transition: 0.4s;
+    color: #ffbf00;
+}
+
+.header .highlight, .header .current a{
+    color: #ffb300;
+    text-shadow: 2px 2px 1px black;
+}
+
+.main-contato{
+    margin: auto;
+    width: 85%;
+    color: white;
+}
+
+.main-contato h1{  
+    text-transform: uppercase;
+    font-family: fantasy;
+    font-size: 50px;
+    border-bottom: #ffb300 5px solid;
+    border-radius: 10px;
+    text-align: justify;
+}
+form{    
+    width: 50%;
+    padding: 30px 0;
+    border-radius: 10px;
+    background-color: #23232360;
+    margin: 50px 0;
+}
+.main-contato a{
+    text-decoration: none;
+    color: #ffb300;
+    padding: 5px;
+    font-family: fantasy;
+    font-size: 15px;
+}
+
+form label, form p{
+    font-family: fantasy;
+    display: block;
+    font-size: 20px;
+    margin-bottom:10px ;
+    margin-left: 10%;
+    text-align: justify;
+
+}
+.input-padrao{
+    display: block;
+    margin-bottom: 20px;
+    padding: 10px 25px;
+    width: 70%;
+    border-radius: 5px;
+    border: solid 2px #232323;
+}
+
+.checkbox{
+    margin:20px 0;
+}
+
+.body-login{
+    background: url(https://steamcdn-a.akamaihd.net/steamcommunity/public/images/items/208650/5ce1a9311f68175164835cf0e43cec420a56e7a0.jpg);
+    background-size: cover;
+}
+
+#mensagemAcerto{
+    font-family: fantasy;
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+
+}
+#mensagemErro{
+    margin: 20px;
+    margin-left: 10%;
+    font-size: 20px;
+    font-family: fantasy;
+    font-weight: bold;
+    color: red;
+}
+.footer-login{
+    border-top: #0f0f0f 3px solid;
+    padding: 20px;
+    margin-top: 20px;
+    color: whitesmoke;
+    background-color: transparent;
+    text-align: center;
+    font-family: fantasy;
+    font-size: 20px;
+    background-color: black
+}
+.footer-login a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.btn_cadastro{
+    border-radius: 10px;
+    border: 1px #ffb300 solid;
+    border-bottom: solid #ffb300 3px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: fantasy;
+    color: white;
+    background-color: #232323aa;
+    width: 150px;
+
+}

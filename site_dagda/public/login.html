@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <link rel="stylesheet" href="css/login-style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DAGDA</title>
+
+</head>
+
+<body>
+</div>
+<div class="header">
+    <div class="container">
+        <div class="title-header">
+            <h1> <span class="highlight">💡 DAGDA</span>  Solutions</h1>
+        </div>      
+        <div class="nav">
+            <ul>
+              
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="serviços.html">Serviços</a></li>
+                <li class="current"><a href="login.html" onclick="enter()" target="iframeb"> Login </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+   <div class="container">
+
+    
+<center>
+    <form id="form_login" method="post" onsubmit="return entrar()">
+        <div class="container">
+          <h2>Login</h2>
+          <p>Usuário:</p> <input type="text" name="login">
+          <br>
+          <p>Senha:</p> <input type="password" name="senha">
+          <br> <br>
+          <button id="btn_entrar">Entrar</button>
+          <p class="margem">Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+        <img src="aguarde.gif" id="img_aguarde" style="display: none; width: 300px;">
+        </div>
+          </form>
+</center>
+
+   </div>
+   
+    
+    <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+        
+    </div>
+
+    <div class="footer-login">
+        <div class="container">
+            <a href="faq.html">SAC </a> | <a href="sobre.html"> SOBRE</a><br>
+            DAGDA - 2020 © |  Contato : 201grupo9c@bandtec.com.br
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+
+    function entrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+            
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.login;
+                    
+                    window.location.href = 'painel.html';
+                });
+
+            } else {
+
+                alert('Erro de login! Verifique se o usuario está correto');
+                img_aguarde.style.display = 'none';
+                btn_entrar.disabled = false;
+                response.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+           
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.display = 'block';
+        div_erro.style.display = 'none';
+    }
+
+    function finalizar_aguardar(resposta) {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display= 'none';
+        div_erro.style.display = 'block';
+        div_erro.innerHTML = resposta;
+    }
+
+</script>

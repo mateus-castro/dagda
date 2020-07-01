@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <title> Cadastro </title>
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+        <div class="title-header">
+            <h1> <span class="highlight">💡 DAGDA</span>  Solutions</h1>
+        </div>      
+        <div class="nav">
+            <ul>
+              
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="serviços.html">Serviços</a></li>
+                <li class="current"><a href="login.html" onclick="enter()" target="iframeb"> Login </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<center>
+  <div class="main-contato">
+    <h1>Cadastre-se</h1>
+    <form>
+      <div id="mensagemAcerto"></div>
+      <ul id="mensagemErro" class="m-erro"></ul>
+
+      <label for="nomesobrenome">Nome e Sobrenome:</label>
+      <input type="text" id="nomesobrenome" class="input-padrao" placeholder=" ex: João Gabriel"/>
+
+      <label for="email">E-mail:</label>
+      <input
+        type="email"
+        id="email"
+        class="input-padrao"
+        placeholder="seuemail@dominio.com"
+      />
+
+      <label for="telefone">Telefone:</label>
+      <input
+        type="tel"
+        id="telefone"
+        class="input-padrao"
+        placeholder="00 9 0000-0000"
+      />
+
+      <label for="senha">Senha:</label>
+      <input
+        type="password"
+        id="senha"
+        class="input-padrao"
+      />
+
+      <button
+      type="button"
+      onclick="btnEnviaContato()"
+      class="btn_cadastro"
+    >
+      Cadastrar
+    </button> 
+     <a href="login.html">Já tenho conta</a>
+
+    </form>
+    </div>
+</center>
+
+      <div class="footer-login">
+        <div class="container">
+            <a href="faq.html">SAC </a> | <a href="sobre.html"> SOBRE</a><br>
+            DAGDA - 2020 © |  Contato : 201grupo9c@bandtec.com.br
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+  function btnEnviaContato() {
+    var erros = validaContato();
+    mensagemErro.innerHTML = "";
+    mensagemAcerto.innerHTML = "";
+
+    if (erros.length > 0) {
+      for (var i = 0; i < erros.length; i++) {
+        var erro = erros[i];
+        var li = document.createElement("li");
+        li.innerHTML = erro;
+        mensagemErro.appendChild(li);
+      }
+    } else {
+      var p = document.createElement("p");
+      p.innerHTML = "Cadastrado com sucesso!";
+      mensagemAcerto.appendChild(p);
+    }
+
+    return;
+  }
+
+  function validaContato() {
+    var erros = [];
+    console.log(email.value.indexOf("@") == -1);
+
+    if (!nomesobrenome.value) {
+      erros.push("O nome não foi preenchido");
+    }
+
+    if (
+      nomesobrenome.value.search(" ") == -1 ||
+      nomesobrenome.value[nomesobrenome.value.length - 1] == " " ||
+      nomesobrenome.value[0] == " "
+    ) {
+      erros.push("Insira o sobrenome");
+    }
+    if (!senha.value) {
+      erros.push("Insira uma senha");
+    }
+
+    if (
+      telefone.value.search("-") == -1 ||
+      telefone.value.length < 12 ||
+      telefone.value[telefone.value.length - 5] != "-"
+    ) {
+      erros.push("O telefone deve ter formato: 00 90000-0000");
+    }
+
+    
+    if (email.value.indexOf("@") == -1) {
+      erros.push("O formato de email é: usuario@dominio.com");
+    } else {
+      var parts = email.value.split("@");
+      var domain = parts[1];
+
+      if (domain.indexOf(".") == -1) {
+        erros.push("O formato de email é: usuario@dominio.com");
+      } else {
+        var domainParts = domain.split(".");
+        var ext = domainParts[1];
+
+        if (ext.length > 4 || ext.length < 2) {
+          erros.push("O formato de email é: usuario@dominio.com");
+        }
+      }
+    }
+
+    return erros;
+  }
+</script>

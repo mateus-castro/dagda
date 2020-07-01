@@ -1,0 +1,158 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    background: url(https://professor-falken.com/wp-content/uploads/2017/11/Como-cambiar-la-imagen-de-fondo-del-inicio-de-sesion-en-tu-Mac-professor-falken.com_.jpg) no-repeat;
+    background-size: cover;
+}
+
+.container{
+    width:80%;
+    margin:auto;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    padding-top: 30px;
+    min-height: 70px;
+    background-color: whitesmoke;
+    border-bottom: black 2px solid;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.header a{
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 25px;
+    font-family: fantasy;
+    border-bottom: #ffbf55 2px solid;
+    border-top: #ffbf55 2px solid;
+    padding: 5px;
+}
+
+.header li{
+    display: inline;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.header .title-header{
+    float: left;
+}
+
+.header .title-header h1{
+    margin: 0;
+    width: 300px;
+
+}
+
+.nav{
+    float: right;
+    margin-top: 10px;
+}
+
+
+.nav ul li a:hover {
+    background-color: black;
+    padding: 7px;
+    font-weight: bold;
+    border-radius: 15px;
+    transition: 0.4s;
+    color: #ffbf00;
+}
+
+.header .highlight, .header .current a{
+    color: #ffb300;
+    text-shadow: 2px 2px 1px black;
+}
+
+
+p{
+    text-align: justify;
+    font-size: 20px;
+    font-family: fantasy;
+    padding: 5px;
+    color: whitesmoke;
+
+}
+
+form{    
+    margin:10%; 
+    width: 50%;
+    padding: 30px 0;
+    border-radius: 10px;
+    background-color: #23232388;
+}
+
+ a{
+    text-decoration: none;
+    color: #ffb300;
+}
+.footer-login a{
+    text-decoration: none;
+    color: white;
+}
+h2{
+    font-size: 50px;
+    color: whitesmoke;
+    font-family: fantasy;
+    letter-spacing: 2px;
+    border-bottom: #ffb300 4px  solid;
+    width: 80%;
+    text-transform: uppercase;
+
+}
+.main-contato h1{
+    font-size: 50px;
+    color: black;
+    font-family: fantasy;
+    letter-spacing: 2px;
+    border-bottom: #ffb300 solid 3px;
+    width: 400px;
+
+}
+.footer-login{
+    border-top: #0f0f0f 3px solid;
+    padding: 20px;
+    margin-top: 20px;
+    color: whitesmoke;
+    background-color: transparent;
+    text-align: center;
+    font-family: fantasy;
+    font-size: 20px;
+    background-color: black
+}
+
+#btn_entrar{
+    border-radius: 10px;
+    border: 1px #ffb300 solid;
+    border-bottom: solid #ffb300 3px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: fantasy;
+    color: white;
+    background-color: #232323aa;
+    width: 150px;
+
+}
+input{
+    width: 400px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-family: fantasy;
+    
+}
+.margem{
+    text-align: center;
+}
