@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="imagem/png" href="img/logo.png" />
     <script src="js/script.js"></script>
     <title> DAGDA </title>
 </head>
@@ -69,14 +70,7 @@
                 voluptate eligendi corporis quisquam animi laborum mollitia perferendis debitis amet, eaque et corrupti,
                 quos, itaque consequatur tempora. <br> <b style="color: red; font-size: 30px;" onclick="fechar(5)">x</b>
             </div>
-            <div>
-                <button class="button_faq" onclick="mostrar(6)"><b>PERGUNTA 6</b></button>
-            </div>
-            <div class="text-faq" id="abrir6">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi harum laboriosam odit minima
-                voluptate eligendi corporis quisquam animi laborum mollitia perferendis debitis amet, eaque et corrupti,
-                quos, itaque consequatur tempora. <br> <b style="color: red; font-size: 30px;" onclick="fechar(6)">x</b>
-            </div>
+           
             <br>
             <h2>Entre em contato</h2>
             <p>Se não achar o seu problema ou não conseguiu resolver, entre em contato com o suporte DAGDA<br> </p>
@@ -84,21 +78,60 @@
                 <label for="Nome">Nome:</label> <br> <textarea type="text" id="Nome"></textarea> <br>
                 <label for="Email">Email:</label> <br> <textarea type="email" id="Email"></textarea> <br>
                 <label for="Assunto">Assunto:</label> <br> <textarea type="text" id="Assunto"></textarea><br>
-                <label for="Mensagem">Escreva sua dúvida!</label> <br> <textarea id="txtArea" rows="10" cols="70"
-                    class="mensagem"></textarea>
+                <label for="Mensagem" id="lb_msg">Escreva sua dúvida!</label> <br> <textarea id="txtArea" rows="10" cols="70"
+                    class="mensagem"></textarea>  
+                    <button
+                    type="button"
+                    onclick="btnEnviar()"
+                    class="btn_msg"
+                  >
+                    Enviar
+                  </button> <br>
+                  <div id="resultado"></div> <br>
                 Ou envie um email diretamente para <b>201grupo9c@bandtec.com.br</b> .
         </div>
     </div>
-    <div id="resultado"></div>
+   
 
     <div class="footer">
         <div class="container">
-            <a href="faq.html">FAQ </a> | <a href="sobre.html"> SOBRE</a><br>
+            <a href="faq.html">SAC </a> | <a href="sobre.html"> SOBRE</a><br>
             DAGDA - 2020 © | Contato : 201grupo9c@bandtec.com.br
         </div>
     </div>
 </body>
 <script>
+    function btnEnviar(){
+        if(!Nome.value){
+            resultado.innerHTML += 'Preencher o nome';
+            if (Email.value.indexOf("@") == -1) {
+      resultado.innerHTML += "<br>O formato de email é: usuario@dominio.com";
+    } else {
+      var parts = Email.value.split("@");
+      var domain = parts[1];
+
+      if (domain.indexOf(".") == -1) {
+        resultado.innerHTML += "<br>O formato de email é: usuario@dominio.com";
+      } else {
+        var domainParts = domain.split(".");
+        var ext = domainParts[1];
+
+        if (ext.length > 4 || ext.length < 2) {
+         resultado.innerHTML += "<br>O formato de email é: usuario@dominio.com";
+        }
+      }
+    }
+    if(!Assunto.value){
+        resultado.innerHTML += `<br>Colocar um Assunto`;
+    }
+    if(!lb_msg.value){
+        resultado.innerHTML += `<br>Escreva uma mensagem`;
+    }
+    }else{
+        resultado.innerHTML = 'Mensagem enviada com sucesso!'; 
+          
+    }
+}
     function mostrar(valor) {
         if (valor == 1) {
             abrir1.style.display = 'block';

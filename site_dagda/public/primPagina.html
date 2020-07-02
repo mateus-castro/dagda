@@ -16,16 +16,17 @@
 
 <body onload="atualizarGrafico();" style="overflow: hidden;">
     <div style="width:100%;" id="graf-pg">
-        <div id="div_aguarde">Dados sendo obtidos...</div>
+        <div id="div_aguarde" style="font-size: 20px;font-family: fantasy;">Dados sendo obtidos... <img src="aguarde.gif" alt=""></div>
         <canvas id="canvas_grafico"></canvas>
     </div>
     <div class="mapa">
-        <h2 id="link-map"> Veja <a href="#box-Mapa"> aqui </a> a localização exata de seus transformadores</h2>
+        <br>
+        <h1 id="link-map" style="font-family: fantasy;"> Veja <a href="#box-Mapa" style="text-decoration: none; color: #ffbf00;"> aqui </a> a localização de seus transformadores</h1>
 
-            <div id="box-Mapa" style="margin-top: 1200px; width: 70%; margin-left: 15%;">
+            <div id="box-Mapa" style="margin-top: 1200px; height: 450px; width: 80%; margin-left: 10%;">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14616.274873780609!2d-46.5836981!3d-23.6735004!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1588301605802!5m2!1spt-BR!2sbr"
-                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    src="https://www.google.com/maps/d/u/0/embed?mid=1CjW8VaquD90W4sCnBTHHS9baoVO_jGxr"
+                    width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
                     tabindex="0"></iframe>
 
                 <br>
@@ -34,7 +35,7 @@
                 <br>
 
 
-                <a href="#graf-pg" id="link-voltar" style="float: right; font-size: 20px;"> Voltar </a>
+                <a href="#graf-pg" id="link-voltar" style="text-decoration: none;float: right;color: #ffbf00; font-size: 25px; font-family: fantasy;"> Voltar </a>
             </div>
     </div>
 </body>
@@ -54,8 +55,8 @@
             {
                 yAxisID: 'y-temperatura',
                 label: 'Temperatura',
-                borderColor: window.chartColors.red,
-                backgroundColor: window.chartColors.red,
+                borderColor: window.chartColors.yellow,
+                backgroundColor: window.chartColors.yellow,
                 fill: false,
                 data: []
             },
@@ -113,7 +114,7 @@
             stacked: false,
             title: {
                 display: true,
-                text: 'Trafo 01'
+                text: `Trafo ${parseInt(Math.random()*6)}`
             },
             scales: {
                 yAxes: [{
