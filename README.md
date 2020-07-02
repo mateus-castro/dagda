@@ -1,3 +1,3 @@
-Grupo PI - 09 BandTec
+Grupo PI - 09 Faculdade BandTec
 
 Dagda - Projeto de monitoramento de transformadores
