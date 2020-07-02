@@ -7,7 +7,7 @@ var Leitura = require('../models').Leitura;
 router.get('/ultimas', function(req, res, next) {
 	
 	// quantas são as últimas leituras que quer? 8 está bom?
-	const limite_linhas = 7;
+	const limite_linhas = 10;
 
 	console.log(`Recuperando as últimas ${limite_linhas} leituras`);
 	
@@ -75,5 +75,28 @@ router.get('/estatisticas', function (req, res, next) {
   
 });
 
+router.get('/estado', function (req, res, next) {
+	
+	console.log(`PieChart1`);
+
+	const instrucaoSql1 = `select 
+							count(temperatura) as qtd_estavel
+							from leitura where temperatura <= 80;
+							select 
+							count(temperatura) as qtd_moderavel
+							from leitura where temperatura <= 100 and temperatura > 80;
+							select
+							count(temperatura) as qtd_critico
+							from leitura where temperatura > 100;`;
+
+	sequelize.query(instrucaoSql1, { type: sequelize.QueryTypes.SELECT })
+		.then(resultado => {
+			res.json(resultado);
+		}).catch(erro => {
+			console.error(erro);
+			res.status(500).send(erro.message);
+		});
+  
+});
 
 module.exports = router;

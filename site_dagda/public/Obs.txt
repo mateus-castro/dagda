@@ -1,0 +1,6 @@
+Rotas
+
+http://localhost:3000/pieChart.html
+http://localhost:3000/leituras/estado
+http://localhost:3000/leituras/ultimas
+http://localhost:3000/usuarios

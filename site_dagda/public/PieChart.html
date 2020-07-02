@@ -9,25 +9,13 @@
 	<script src="./PieChart_files/Chart.min.js.download"></script>
 	<script src="./PieChart_files/utils.js.download"></script>
 	<script src="js/script.js"></script>
-
-
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
-
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-nvd3/1.0.5/angular-nvd3.min.js"></script>
-
-	<div ng-app="meuApp">
-		<div ng-controller="MeuController as vm">
-			<nvd3 options="vm.opcoes" data="vm.dados"></nvd3>
-		</div>
-	</div>
+	<link rel="stylesheet" href="css/style.css">
 
 </head>
 
-<body style="overflow: hidden;">
+<body style="background-color: transparent;">
 	<center>
+		<div id="div_test"></div>
 		<div id="canvas-holder" style="width:100%">
 			<div class="chartjs-size-monitor">
 				<div class="chartjs-size-monitor-expand">
@@ -38,117 +26,94 @@
 				</div>
 				<br><br>
 			</div>
-			<canvas id="chart-area" style="display: block; width: 762px; height: 381px;" width="5" height="3"
+			<canvas id="chart-area" style="display: block; width: 900px; height: 350px;" width="5" height="3"
 				class="chartjs-render-monitor"></canvas>
 		</div>
 	</center>
 </body>
 
 <script>
+	var estavel = 0;
+	var moderavel = 0;
+	var critico = 0;
+
 	var randomScalingFactor = function () {
 		return Math.round(Math.random() * 100);
 	};
 
-	// var config = {
-	// 	type: 'pie',
-	// 	data: {
-	// 		datasets: [{
-	// 			data: [
-	// 				randomScalingFactor(),
-	// 				randomScalingFactor(),
-	// 				randomScalingFactor(),
-	// 			],
-	// 			backgroundColor: [
-	// 				window.chartColors.yellow,
-	// 				window.chartColors.red,
-	// 				window.chartColors.green
-	// 			],
-	// 			label: 'Dataset 1'
-	// 		}],
-	// 		labels: [
-	// 			'Moderável',
-	// 			'Crítico',
-	// 			'Estável'
-	// 		]
-	// 	},
-	// 	options: {
-	// 		responsive: true,
-	// 		title: {
-	// 			display: true,
-	// 			text: 'Estado dos Trafos'
-	// 		}
-	// 	}
-	// };
-
-	/////////////////////////////////////////////////
-
-	angular
-		.module('meuApp', ['nvd3'])
-		.controller('MeuController', MeuController);
-
-	MeuController.$inject = [];
-
-	function MeuController() {
-		var vm = this;
-
-		vm.opcoes = {
-			chart: {
-				type: 'pieChart',
-				pie: {
-					dispatch: {
-						elementClick: function (evento) { console.log(evento) }
-					}
-				},
-				height: 500,
-				x: function (d) {
-					return d.key;
-				},
-				y: function (d) {
-					return d.y;
-				},
-				showLabels: true,
-				duration: 500,
-				labelThreshold: 0.01,
-				labelSunbeamLayout: true,
-				legend: {
-					margin: {
-						top: 5,
-						right: 35,
-						bottom: 5,
-						left: 0
-					}
-				}
+	var config = {
+		type: 'pie',
+		data: {
+			datasets: [{
+				data: [
+					1,
+					1,
+					1,
+				],
+				backgroundColor: [
+					window.chartColors.yellow,
+					window.chartColors.red,
+					window.chartColors.green
+				],
+				label: 'Dataset 1'
+			}],
+			labels: [
+				'Moderável',
+				'Crítico',
+				'Estável'
+			]
+		},
+		options: {
+			responsive: true,
+			title: {
+				display: true,
+				text: 'Estado dos Trafos'
 			}
-		};
-
-		vm.dados = [
-			{ key: "Crítico", y: randomScalingFactor() },
-			{ key: "Estável", y: randomScalingFactor() },
-			{ key: "Moderado", y: randomScalingFactor() }
-		];
+		}
 	};
 
-	///////////////////////////////////////////////////////////////
+	function p_banco() {
+		setTimeout(() => {
+			fetch("http://localhost:3000/leituras/estado").then(function (response) {
+				if (response.ok) {
+					response.json().then(function (resposta) {
+						estavel = resposta[0].qtd_estavel;
+						moderavel = resposta[1].qtd_moderavel;
+						critico = resposta[2].qtd_critico;
+
+						// div_test.innerHTML = `${estavel}`;
+						console.log(`Estavel: ${estavel}, Moderavel: ${moderavel}, Critico: ${critico}, Total: ${estavel+moderavel+critico}`);
+					});
+				}
+			});
+			// Chama a função
+			p_banco();
+		}, 2000) // 2000 ms -> 2 segundos
+	}
 
 	function receberNovasLeituras() {
 		setTimeout(() => {
 
 			// esse "novoRegistro" será recuperado do backend futuramente
 			var novoRegistro = {
-				data: randomScalingFactor()
+				data: `${estavel}`
 			};
 
-			// tirando e colocando valores no gráfico
-			config.data.datasets[0].data.shift();  // apagar o primeiro
-			config.data.datasets[0].data.push(novoRegistro.data); // incluir uma nova leitura
+			config.data.datasets[0].data[0] = `${moderavel}`;
+			config.data.datasets[0].data[1] = `${critico}`;
+			config.data.datasets[0].data[2] = `${estavel}`;
 
+			// // tirando e colocando valores no gráfico
+			// config.data.datasets[0].data.shift();  // apagar o primeiro
+			// config.data.datasets[0].data.push(novoRegistro.data); // incluir uma nova leitura
+ 
 			// Atualiza o gráfico
 			window.myPie.update();
 
 			// agendar a chamada da mesma função para daqui a 5 segundos
 			receberNovasLeituras();
 
-		}, 5); // 5000 ms -> 5 segundos
+		}, 5000); // 5000 ms -> 5 segundos
 	}
 
 	window.onload = function () {
@@ -156,6 +121,7 @@
 		window.myPie = new Chart(ctx, config);
 
 		receberNovasLeituras();
+		p_banco();
 	};
 
 </script>

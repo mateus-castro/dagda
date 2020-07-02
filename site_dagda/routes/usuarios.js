@@ -1,4 +1,6 @@
 var express = require('express');
+const { request, response } = require('express');
+const db = require('../models');
 var router = express.Router();
 var sequelize = require('../models').sequelize;
 var Usuario = require('../models').Usuario;
