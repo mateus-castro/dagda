@@ -143,8 +143,20 @@ h2{
     color: white;
     background-color: #232323aa;
     width: 150px;
-
+    transition: 2s;
+    cursor: pointer;
 }
+
+#btn_entrar:hover{
+    color: white;
+    background-color: #ffb300;
+}
+
+#btn_entrar:active{
+    color: black;
+    background-color: #ffb300;
+}
+
 input{
     width: 400px;
     border: none;

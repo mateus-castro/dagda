@@ -173,5 +173,16 @@ form label, form p{
     color: white;
     background-color: #232323aa;
     width: 150px;
+    transition: 2s;
+    cursor: pointer;
+}
 
+.btn_cadastro:hover{
+    color: white;
+    background-color: #ffb300;
+}
+
+.btn_cadastro:active{
+    color: black;
+    background-color: #ffb300;
 }
